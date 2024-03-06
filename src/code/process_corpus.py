@@ -2,13 +2,15 @@
 import ir_datasets
 import spacy
 from lex_process import *
-from utils import list_to_set
+
+#metodos auxiliares
+from utils import *
 
 #cargar el corpus
 def load() -> list:
   datasets = ir_datasets.load("cranfield")
   docs = [doc.text for doc in datasets.docs_iter()]
-  return docs[:3]
+  return docs
 
 #devolver el corpus parseado
 def parse_corpus() -> list:
